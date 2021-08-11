@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BING-MAP</title>
+    <meta charset="utf-8" />
+
+    <script 
+            src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[AjC8BJ3mCXXO_dL2e22T0LmbyKRU-qQtLQwKXw8Rch45oLlWylZNyux-_W8Lga8e]Accountid=1892439' 
+            async defer></script>
+    
+    <script>
+    function GetMap()
+    {
+        var map = new Microsoft.Maps.Map('#myMap', {
+    credentials: 'AjC8BJ3mCXXO_dL2e22T0LmbyKRU-qQtLQwKXw8Rch45oLlWylZNyux-_W8Lga8e',
+    center: new Microsoft.Maps.Location(13.007016907409616, 77.7249034377936),
+    mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+    zoom: 10
+});
+    }
+    </script>
+</head>
+<body>
+    <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
+            <a id="largeMapLink" target="_blank" href="https://www.bing.com/maps?cp=13.039045132619805~77.81254577636714&amp;sty=r&amp;lvl=8&amp;FORM=MBEDLD">View Larger Map</a> &nbsp; | &nbsp;
+        <a id="dirMapLink" target="_blank" href="https://www.bing.com/maps/directions?cp=13.039045132619805~77.81254577636714&amp;sty=r&amp;lvl=8&amp;rtp=~pos.13.039045132619805_77.81254577636714____&amp;FORM=MBEDLD">Get Directions</a>
+</body>
+</html>
+
+

@@ -1,0 +1,59 @@
+<DOCTYPE! html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+.form{
+    margin: auto;
+    margin-top: 200px;
+    width: 300px;
+    border: 0.5px solid grey;
+    border-radius: 3%;
+    padding: 40px;
+}
+
+input[type=text]{
+width:100%;
+height:30px;
+}
+
+*{
+margin:5px;
+}
+</style>
+</head>
+<body>
+<form class="form">
+<input class="txt" type="text" id="Fname" placeholder="Fname"></input>
+<input class="txt" type="text" id="Lname" placeholder="LastName"></input>
+<a href="" id="dwnld" download="Demo.json">Download</a>
+<div id="bind"></div>
+</form>
+
+<script>
+// $("#dwnld").click(function(){
+
+    var jsondata = [];
+    $(document).on('change','.txt',function(){
+var fname = document.getElementById('Fname').value;
+var lname = document. getElementById('Lname').value;
+var jsonObj = {
+Fname:fname,
+Lname:lname,
+}
+
+        jsondata.push(jsonObj);
+        console.log(jsondata);
+
+    })
+
+// alert(JSON.stringify(Jsondata));
+
+$("#dwnld").click(function(){
+            var cnt = JSON.stringify(jsondata);
+    this.href = "data:application/json;charset=UTF-8,"  + encodeURIComponent(cnt);
+})
+</script>
+
+</body>
+</html>

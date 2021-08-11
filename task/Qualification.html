@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualification</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#flip1").click(function(){
+    $("#panel1").slideToggle("slow");
+  });
+});
+
+$(document).ready(function(){
+  $("#flip2").click(function(){
+    $("#panel2").slideToggle("slow");
+  });
+});
+
+$(document).ready(function(){
+  $("#flip3").click(function(){
+    $("#panel3").slideToggle("slow");
+  });
+});
+</script>
+<script>
+    var valueoftext = 0;
+function myFunction(ids){
+    // For the Validation of above 100 total marks
+
+    if($('#'+ids).val() >=100){
+        alert("Your Given Total Mark Is Above 100");
+        $('#'+ids).val('');
+    }
+
+    //Sum of Total
+
+    var a = $('#'+ids).val();
+    valueoftext += Number(a);
+    $('#sslctm').text(valueoftext);
+
+}
+</script>
+<script>
+    var valueofhsc = 0;
+function hsc1Function(ids){
+    // For the Validation of above 100 total marks
+
+    if($('#'+ids).val() >=200){
+        alert("Your Given Total Mark Is Above 100");
+        $('#'+ids).val('');
+    }
+
+    //Sum of Total
+
+    var a = $('#'+ids).val();
+    valueofhsc += Number(a);
+    $('#hsc1totm').text(valueofhsc);
+
+}
+</script>
+<script>
+    var valueofhsc = 0;
+function hsc2Function(ids){
+    // For the Validation of above 100 total marks
+
+    if($('#'+ids).val() >=200){
+        alert("Your Given Total Mark Is Above 200");
+        $('#'+ids).val('');
+    }
+
+    //Sum of Total
+
+    var a = $('#'+ids).val();
+    valueofhsc += Number(a);
+    $('#hsc2totm').text(valueofhsc);
+
+}
+</script>
+    <style>
+        body{
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+        .container{
+            background-color: rgb(250, 241, 241);
+            width: 50%;
+            margin: auto;
+            border: 1px solid black;
+            border-radius: 5%;
+        }
+        .lbl{
+            display: flex;
+            height: 30px;
+        }
+        .ocpid, .ttl, .pect, .sub{
+            flex: 25%;
+            font-size: medium;
+            text-align: center;
+            margin-top: 5px;
+        }
+        
+        .sub1,.tot{
+            display: flex;
+            height: 30px;
+        }
+        
+        .omrk, .tmrk, .pmrk, .subn{
+            flex: 25%;
+            font-size: medium;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .mlbl{
+            flex: 20%;
+            font-size: x-large;
+            margin: 10px 0px;
+            text-align: center;
+            padding-top: 7px;
+        }
+        .sslc, .hsc1, .hsc2{
+            display: flex;
+        }
+        h1{
+            text-align: center;
+        }
+        .text_center{
+            text-align: center;
+        }
+        .pannel{
+            padding: 5px;
+    border: solid 1px #c3c3c3;
+    margin-right: 50px;
+        }
+        .fnt_weight600 {
+            font-weight: 600;
+            color: #2c2c2c;
+            font-size: 18px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Qualification Form</h1>
+        <div class="sslc">
+        <div class="mlbl">SSLC</div>
+        <div class="10th" style="flex: 75%; margin: 10px 0px;">
+            <div class="tot" id="flip1" style="padding: 5px; border: solid 1px #c3c3c3; margin-right: 50px;">
+                <div class="omrk" style="flex: 33.3%;display: flex;"> <span class="fnt_weight600">Your Mark : </span> <P id="sslctm" style="margin: 2px 6px;"></P></div>
+                <div class="tmrk" style="flex: 33.3%;"> <span class="fnt_weight600">Total : </span> 500</div>
+                <div class="pmrk" style="flex: 33.3%;"><P id="sslctp"></P></div>
+            </div>
+            <div class="pannel" id="panel1" style="display: none;">
+            <div class="lbl">
+                <div class="sub">Subject</div>
+                <div class="ocpid">Occupied</div>
+                <div class="ttl">Total</div>
+                <div class="pect">Percentage</div>
+            </div>
+            <br>
+            <div class="sub1">
+                <div class="subn" style="flex: 25%;">Maths</div>
+                <div class="omrk" style="flex: 25%;"><input type="number" id="sslcmm" style="width: 50px; height: 50%;" onchange="myFunction('sslcmm')"></div>
+                <div class="tmrk" style="flex: 25%;">100</div>
+                <div class="pmrk" style="flex: 25%;"><P id="sslcmp"></P></div>
+            </div>
+            <div class="sub1">
+                <div class="subn" style="flex: 25%;">Science</div>
+                <div class="omrk" style="flex: 25%;"><input type="number" id="sslcsm" style="width: 50px; height: 50%;" onchange="myFunction('sslcsm')"></div>
+                <div class="tmrk" style="flex: 25%;">100</div>
+                <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+            </div>
+            <div class="sub1">
+                <div class="subn" style="flex: 25%;">Social</div>
+                <div class="omrk" style="flex: 25%;"><input type="number" id="sslcssm" style="width: 50px; height: 50%;" onchange="myFunction('sslcssm')"></div>
+                <div class="tmrk" style="flex: 25%;">100</div>
+                <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+            </div>
+            <div class="sub1">
+                <div class="subn" style="flex: 25%;">Tamil</div>
+                <div class="omrk" style="flex: 25%;"><input type="number" id="sslctam" style="width: 50px; height: 50%;" onchange="myFunction('sslctam')"></div>
+                <div class="tmrk" style="flex: 25%;">100</div>
+                <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+            </div>
+            <div class="sub1">
+                <div class="subn" style="flex: 25%;">English</div>
+                <div class="omrk" style="flex: 25%;"><input type="number" id="sslcem" style="width: 50px; height: 50%;" onchange="myFunction('sslcem')"></div>
+                <div class="tmrk" style="flex: 25%;">100</div>
+                <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+            </div>
+            
+        </div>
+    </div>
+        </div>
+        <hr size="1" width="100%" color="red">
+
+        <div class="hsc1">
+            <div class="mlbl">HSC 1st</div>
+            <div class="10th" style="flex: 75%; margin: 10px 0px;">
+                <div class="tot" id="flip2" style="padding: 5px; border: solid 1px #c3c3c3; margin-right: 50px;">
+                    <div class="omrk" style="flex: 33.3%;display: flex;"> <span class="fnt_weight600">Your Mark : </span> <P id="hsc1totm" style="margin: 2px 6px;"></P></div>
+                    <div class="tmrk" style="flex: 33.3%;"> <span class="fnt_weight600">Total : </span> 1200</div>
+                    <div class="pmrk" style="flex: 33.3%;"><P id="hsc1totp"></P></div>
+                </div>
+                <div class="pannel" id="panel2" style="display: none;">
+                <div class="lbl">
+                    <div class="sub">Subject</div>
+                    <div class="ocpid">Occupied</div>
+                    <div class="ttl">Total</div>
+                    <div class="pect">Percentage</div>
+                </div>
+                <br>
+                <div class="sub1">
+                    <div class="subn" style="flex: 25%;">Maths</div>
+                    <div class="omrk" style="flex: 25%;"><input type="number" id="hsc1mm" style="width: 50px; height: 50%;" onchange="hsc1Function('hsc1mm')"></div>
+                    <div class="tmrk" style="flex: 25%;">200</div>
+                    <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+                </div>
+                <div class="sub1">
+                    <div class="subn" style="flex: 25%;">Chemistry</div>
+                    <div class="omrk" style="flex: 25%;"><input type="number" id="hsc1cm" style="width: 50px; height: 50%;"  onchange="hsc1Function('hsc1cm')"></div>
+                    <div class="tmrk" style="flex: 25%;">200</div>
+                    <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+                </div>
+                <div class="sub1">
+                    <div class="subn" style="flex: 25%;">Physics</div>
+                    <div class="omrk" style="flex: 25%;"><input type="number" id="hsc1pm" style="width: 50px; height: 50%;" onchange="hsc1Function('hsc1pm')"></div>
+                    <div class="tmrk" style="flex: 25%;">200</div>
+                    <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+                </div>
+                <div class="sub1">
+                    <div class="subn" style="flex: 25%;">Computer</div>
+                    <div class="omrk" style="flex: 25%;"><input type="number" id="hsc1csm" style="width: 50px; height: 50%;" onchange="hsc1Function('hsc1csm')"></div>
+                    <div class="tmrk" style="flex: 25%;">200</div>
+                    <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+                </div>
+                <div class="sub1">
+                    <div class="subn" style="flex: 25%;">Tamil</div>
+                    <div class="omrk" style="flex: 25%;"><input type="number" id="hsc1tm" style="width: 50px; height: 50%;" onchange="hsc1Function('hsc1tm')"></div>
+                    <div class="tmrk" style="flex: 25%;">200</div>
+                    <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+                </div>
+                <div class="sub1">
+                    <div class="subn" style="flex: 25%;">English</div>
+                    <div class="omrk" style="flex: 25%;"><input type="number" id="hsc1em" style="width: 50px; height: 50%;" onchange="hsc1Function('hsc1em')"></div>
+                    <div class="tmrk" style="flex: 25%;">200</div>
+                    <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <hr size="1" width="100%" color="red">
+
+            <div class="hsc1">
+                <div class="mlbl">HSC 2nd</div>
+                <div class="10th" style="flex: 75%; margin: 10px 0px;">
+                    <div class="tot" id="flip3" style="padding: 5px; border: solid 1px #c3c3c3; margin-right: 50px;">
+                        <div class="omrk" style="flex: 33.3%;display: flex;"> <span class="fnt_weight600">Your Mark : </span> <P id="hsc2totm" style="margin: 2px 6px;"></P></div>
+                        <div class="tmrk" style="flex: 33.3%;"> <span class="fnt_weight600">Total : </span> 1200</div>
+                        <div class="pmrk" style="flex: 33.3%;"><P id="hsc2totp"></P></div>
+                    </div>
+                    <div class="pannel" id="panel3" style="display: none;">
+                    <div class="lbl">
+                        <div class="sub">Subject</div>
+                        <div class="ocpid">Occupied</div>
+                        <div class="ttl">Total</div>
+                        <div class="pect">Percentage</div>
+                    </div>
+                    <br>
+                    <div class="sub1">
+                        <div class="subn" style="flex: 25%;">Maths</div>
+                        <div class="omrk" style="flex: 25%;"><input type="number" id="hsc2mm" style="width: 50px; height: 50%;" onchange="hsc2Function('hsc2mm')"></div>
+                        <div class="tmrk" style="flex: 25%;">200</div>
+                        <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+                    </div>
+                    <div class="sub1">
+                        <div class="subn" style="flex: 25%;">Chemistry</div>
+                        <div class="omrk" style="flex: 25%;"><input type="number" id="hsc2cm" style="width: 50px; height: 50%;"  onchange="hsc2Function('hsc2cm')"></div>
+                        <div class="tmrk" style="flex: 25%;">200</div>
+                        <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+                    </div>
+                    <div class="sub1">
+                        <div class="subn" style="flex: 25%;">Physics</div>
+                        <div class="omrk" style="flex: 25%;"><input type="number" id="hsc2pm" style="width: 50px; height: 50%;" onchange="hsc2Function('hsc2pm')"></div>
+                        <div class="tmrk" style="flex: 25%;">200</div>
+                        <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+                    </div>
+                    <div class="sub1">
+                        <div class="subn" style="flex: 25%;">Computer</div>
+                        <div class="omrk" style="flex: 25%;"><input type="number" id="hsc2csm" style="width: 50px; height: 50%;" onchange="hsc2Function('hsc2csm')"></div>
+                        <div class="tmrk" style="flex: 25%;">200</div>
+                        <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+                    </div>
+                    <div class="sub1">
+                        <div class="subn" style="flex: 25%;">Tamil</div>
+                        <div class="omrk" style="flex: 25%;"><input type="number" id="hsc2tm" style="width: 50px; height: 50%;" onchange="hsc2Function('hsc2tm')"></div>
+                        <div class="tmrk" style="flex: 25%;">200</div>
+                        <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+                    </div>
+                    <div class="sub1">
+                        <div class="subn" style="flex: 25%;">English</div>
+                        <div class="omrk" style="flex: 25%;"><input type="number" id="hsc2em" style="width: 50px; height: 50%;" onchange="hsc2Function('hsc2em')"></div>
+                        <div class="tmrk" style="flex: 25%;">200</div>
+                        <div class="pmrk" style="flex: 25%;"><P id="P"></P></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <hr size="1" width="100%" color="red">
+                
+    </div>
+
+</body>
+</html>

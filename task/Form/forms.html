@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="1.png"/>
+    <title>Form1</title>
+
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        input[type=text], select, textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          resize: vertical;
+        }
+        
+        input[type=number] {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          resize: vertical;
+        }
+
+        input[type=date] {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          resize: vertical;
+        }
+
+        label {
+          padding: 12px 12px 12px 0;
+          display: inline-block;
+        }
+        
+        button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 5px 15px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          float: right;
+          margin: 0px 10px;
+          margin-top: 1rem;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+
+        span{
+            font-size: 25px;
+        }
+        
+        .container {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+          width: 50%;
+          margin: auto;
+          margin-top: 200px;
+          border: 1px solid black;
+        }
+
+        
+        
+        .row{
+            width: 100%;
+        }
+        .col-25 {
+          float: left;
+          width: 25%;
+          margin-top: 6px;
+        }
+        
+        .col-75 {
+          float: left;
+          width: 75%;
+          margin-top: 6px;
+        }
+        
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        label{
+            color:cornflowerblue;
+        }
+
+        .val{
+            color:red;
+            font-size: 11px;
+            margin: 0;
+        }
+
+        #data{
+
+}
+        </style>
+</head>
+<body>
+    
+    <div class="container">
+        <form action="Form2.html" method="GET">
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">First Name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="firstname" placeholder="Your name.." onblur="fnamevalidate();" >
+            <p id="fnme" class="val"></p>            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="lname">Last Name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.." onblur="lnamevalidate();">
+            <p id="lnme" class="val"></p>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+              <label for="dob">DOB</label>
+            </div>
+            <div class="col-75">
+              <input type="date" id="dob" name="dateof birth" placeholder="Your DOB..">
+            </div>
+        </div>
+        
+        <div class="row">
+        <div>
+            <button onclick="getData()">Next <span>&#8680;</span></button>  
+        </div>
+        </div>
+        </form>
+      </div>
+
+    <script>
+        function fnamevalidate(){
+            var regName = /^[a-zA-Z]+$/;
+            var fname = document.getElementById('fname').value;
+            if(!regName.test(fname)){
+                document.getElementById("fnme").innerHTML = "Invalid name";
+                return false;
+            }else{               
+                document.getElementById("fnme").style.display = "none"; 
+                return true;
+            }   
+        }
+
+        function lnamevalidate(){
+            var regName = /^[a-zA-Z]+$/;
+            var lname = document.getElementById('lname').value;
+            if(!regName.test(lname)){
+                document.getElementById("lnme").innerHTML = "Invalid name";
+                return false;
+            }else{              
+                document.getElementById("lnme").style.display = "none";  
+                return true;
+            }   
+        }
+
+        function getData()
+{
+    //gettting the values
+    var fname = document.getElementById("fname").value;
+    var lname= document.getElementById("lname").value; 
+    var dob= document.getElementById("dob").value; 
+    //saving the values in local storage
+    localStorage.setItem("txtValue", fname);
+    localStorage.setItem("txtValue1", lname);
+    localStorage.setItem("txtValue2", dob);   
+}
+
+</script>
+
+</body>
+</html>

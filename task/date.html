@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+</head>
+<body>
+    <div class="col">
+        <label for="date">Date</label>
+        <input type="date" class="form-control" id="date" 
+          name="date" min="2000-01-01" max="2002-12-31">
+      </div>
+      <p id="fuldte"></p>
+      <p id="year"></p>
+      <p id="day"></p>
+      <p id="month"></p>
+      <p id="hours"></p>
+      <p id="minutes"></p>
+      <p id="seconds"></p>
+      <p id="dayn"></p>
+      <p id="monthn"></p>
+
+
+      <script>
+        const d = new Date();
+        document.getElementById("fuldte").innerHTML = d;
+        document.getElementById("year").innerHTML = "YEAR: " + d.getFullYear();
+        document.getElementById("day").innerHTML = "DAY: " + d.getDay();
+        document.getElementById("month").innerHTML = "MOUNTH: " +  d.getMonth();
+        document.getElementById("hours").innerHTML = "HOURS: " + d.getHours();
+        document.getElementById("minutes").innerHTML = "MINUTES: " + d.getMinutes();
+        document.getElementById("seconds").innerHTML = "SECONDS: " + d.getSeconds();
+        const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        document.getElementById("dayn").innerHTML = "DAY NAME: " +  days[d.getDay()];
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        document.getElementById("monthn").innerHTML = "MONTH NAME: " +  months[d.getMonth()];
+        
+     </script>
+
+    <script>
+        function getDate() {
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1;
+  var yyyy = today.getFullYear();
+
+  if(dd<10) {
+      dd = '0'+dd
+  } 
+
+  if(mm<10) {
+      mm = '0'+mm
+  } 
+
+  today = yyyy +'-' +mm+'-'+dd;
+  console.log(today);
+  document.getElementById("date").value = today;
+}
+
+
+window.onload = function() {
+  getDate();
+};
+    </script>
+</body>
+</html>

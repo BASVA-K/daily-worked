@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<body id="bdy">
+<p id="txt">HELLO EVERYONE!</p>
+
+<button onclick="myFunction()" id="btn">Click </button>
+
+<br><br><div id="myname">BASVA</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myname");
+  var y = document.getElementById("btn");
+  var z = document.getElementById("txt");
+  var a = document.getElementById("bdy");
+
+  if (x.innerHTML === "BASVA") {
+    x.innerHTML = "RAJ";
+    y.innerHTML = "Me";
+    y.style.color = "black";
+    y.style.backgroundColor = "red";
+    z.style. display = "none";
+    a.style.backgroundColor = "lightgreen";
+    
+  } else {
+    x.innerHTML = "BASVA";
+    y.style.color = "white";
+    y.innerHTML = "Click";
+    y.style.backgroundColor = "blue";
+    z.style. display = "block";
+    a.style.backgroundColor = "lightblue";
+
+  }
+}
+</script>
+
+</body>
+</html>

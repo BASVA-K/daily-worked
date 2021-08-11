@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAR PATTERN</title>
+</head>
+<body>
+
+    <p id="wdth"></p>
+    <p id="inrwth"></p>
+    <p id="higt"></p>
+    <p id="inrhgt"></p>
+    <p id="availw"></p>
+    <p id="availh"></p>
+    <p id="clrdpt"></p>
+    <p id="pxldpt"></p>
+    <button onclick="myFunction()">Open window</button>
+    <br><br>
+    <button onclick="openWin()">Open "myWindow"</button>
+    <button onclick="closeWin()">Close "myWindow"</button>
+    <br><br>
+    <button onclick="openWinb()">Open youtube</button>
+    <button onclick="closeWinb()">Close youtube</button>
+    <br><br>
+    <button onclick="openWinc()">Open myWindow</button>
+    <button onclick="moveWinc()">Move myWindow</button>
+    <br><br>
+    <button onclick="openWind()">Create window</button>
+    <button onclick="resizeWind()">Resize window</button>
+    <br><br>
+    
+    
+    <script type="text/javascript">
+        var i,j;
+        for(i=1; i <= 5; i++)
+        {
+         for(j=1; j<=i; j++)
+        {
+          
+          document.write('*');
+         }
+          document.write('<br />');
+         }
+
+         document.getElementById("wdth").innerHTML = "The width of screen is : " + screen.width;
+
+         document.getElementById("higt").innerHTML = "The height of screen is : " + screen.height;
+
+         document.getElementById("availw").innerHTML = "The avilable width of screen is : " + screen.availWidth;
+
+         document.getElementById("availh").innerHTML = "The avilable height of screen is : " + screen.availHeight;
+
+         document.getElementById("clrdpt").innerHTML = "The color depth of screen is : " + screen.colorDepth;
+
+         document.getElementById("pxldpt").innerHTML = "The pixel depth of screen is : " + screen.pixelDepth;
+
+         document.getElementById("inrwth").innerHTML = "The inner width of window is : " + window.innerWidth;
+
+         document.getElementById("inrhgt").innerHTML = "The inner height of window is : " + window.innerHeight;
+
+         function myFunction() {
+            window.open("https://www.youtube.com");
+         }
+
+         function openWin() {
+            myWindow1 = window.open("", "myWindow", "width=200,height=100");
+            myWindow1.document.write("<p>This is 'myWindow'</p>");
+         }
+
+         function closeWin() {
+            myWindow1.close();
+         }
+
+         function openWinb() {
+            myWindow2 = window.open("https://www.youtube.com", "_blank", "width=700,height=500");
+         }
+
+         function closeWinb() {
+            myWindow2.close();
+         }
+
+         function openWinc() {
+            myWindow3 = window.open("", "myWindow", "width=200,height=100");
+            myWindow3.document.write("<p>This is 'myWindow'</p>");
+         }
+
+         function moveWinc() {
+            myWindow3.moveTo(500, 100);
+            myWindow3.focus();
+         }
+
+         function openWind() {
+         myWindow4 = window.open("", "", "width=100, height=100");
+         }
+
+         function resizeWind() {
+         myWindow4.resizeTo(250, 250);
+         myWindow4.focus();
+         }
+
+    </script>
+
+</body>
+</html>

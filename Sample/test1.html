@@ -1,0 +1,46 @@
+<DOCTYPE! html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        .ifrm{
+            height: 400px;
+            width: 200px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <input type="date" id="date">
+    <button id="btn" onclick="check()">CHECK</button>
+    <br><br>
+    <label>datalist</label>
+    <input list="demo" type="text"></input>
+    <datalist id="demo">
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+</datalist>
+<br><br>
+
+<iframe src="https://srmvcas.edu.in/" class="ifrm" ></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.450449551811!2d77.72276571433453!3d13.006962017621802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae111fb1415add%3A0x50edbb2c7e7e56ac!2sVisualApp%20Foundry!5e0!3m2!1sen!2sin!4v1628056924226!5m2!1sen!2sin" width="400" height="300" style="border:2px solid black; margin-left: 5rem;" allowfullscreen="" loading="lazy"></iframe>
+
+<div>
+    <iframe width="325" height="280" frameborder="0" src="https://www.bing.com/maps/embed?h=280&w=325&cp=13.006757924026502~77.72490730118865&lvl=19&typ=d&sty=h&src=SHELL&FORM=MBEDV8" scrolling="no"></iframe>
+</div>
+
+<br><br>
+
+
+
+<script>
+function check(){
+    var x = document.getElementById("date").value;
+    if(x.innerhtml.day != 6){
+        alert("invallid");
+    }
+}
+    </script>
+</body>
+</html>

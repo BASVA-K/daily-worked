@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        input[type=text], select, textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          resize: vertical;
+        }
+        
+        input[type=number] {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          resize: vertical;
+        }
+
+        input[type=date] {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          resize: vertical;
+        }
+
+        label {
+          padding: 12px 12px 12px 0;
+          display: inline-block;
+        }
+        
+        input[type=submit], button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          float: right;
+          margin: 0px 10px;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+
+        button:hover {
+          background-color: #45a049;
+        }
+        
+        .container {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+          width: 100%;
+          
+        }
+
+        fieldset{
+            width: 80%;
+            margin: auto;
+        }
+        
+        .row{
+            width: 100%;
+        }
+        .col-25 {
+          float: left;
+          width: 25%;
+          margin-top: 6px;
+        }
+        
+        .col-75 {
+          float: left;
+          width: 75%;
+          margin-top: 6px;
+        }
+        
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        label{
+            color:cornflowerblue;
+        }
+
+        .val{
+            color:red;
+            font-size: 11px;
+            margin: 0;
+        }
+        </style>
+</head>
+<body onload="myFunction()">
+    <fieldset>
+        <legend>Form:</legend>
+    <div class="container">
+        <form action="">
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">First Name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="firstname" placeholder="Your name.." onblur="fnamevalidate();" >
+            <p id="fnme" class="val"></p>            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="lname">Last Name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.." onblur="lnamevalidate();">
+            <p id="lnme" class="val"></p>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+              <label for="dob">DOB</label>
+            </div>
+            <div class="col-75">
+              <input type="date" id="dob" name="dateof birth" placeholder="Your DOB..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+              <label for="age">Age</label>
+            </div>
+            <div class="col-75">
+              <input type="number" id="age" name="age" placeholder="Your age.." onblur="agevalidate();">
+              <p id="ag" class="val"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="gender">Gender</label>
+            </div>
+            <div class="col-75">
+              <input type="radio" id="male" name="gender">
+              <label for="male">Male</label>
+              <input type="radio" id="female" name="gender">
+              <label for="female">Female</label>
+              <input type="radio" id="trans" name="gender">
+              <label for="trans">Transgender</label>
+              <p id="rd" style="color: green;"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="lang">Languages</label>
+            </div>
+            <div class="col-75">
+              <input type="checkbox" id="tam" name="lang">
+              <label for="tam">Tamil</label>
+              <input type="checkbox" id="eng" name="lang">
+              <label for="eng">English</label>
+              <input type="checkbox" id="kan" name="lang">
+              <label for="kan">Kannada</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="degree">Degree</label>
+            </div>
+            <div class="col-75">
+                <input list="degree" id="degrees" name="Degree" placeholder="Select your degree.."
+                 style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; resize: vertical;">
+                <datalist id="degree">
+                  <option value="UG">
+                <option value="PG">
+                <option value="Phd">
+                </datalist>
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="country">Country</label>
+          </div>
+          <div class="col-75">
+            <select id="country" name="country" onchange="cntryvalidate();">
+                <option value="">Select Your Country</option>
+              <option value="australia">Australia</option>
+              <option value="canada">Canada</option>
+              <option value="usa">USA</option>
+            </select>
+            <p id="cnt" class="val"></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="subject">Subject</label>
+          </div>
+          <div class="col-75">
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:50px" onkeydown="txtarea()"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+        <label for="myfile">Select file:</label>
+      </div>
+        <input type="file" id="myfile" name="myfile">
+      </div>
+      <div class="row">
+        <div class="col-25">
+        <label for="myfilem">Select files:</label>
+      </div>
+        <input type="file" id="myfilem" name="myfile" multiple>
+      </div>
+        <div class="row">
+        <div>
+          <input type="submit" value="Submit">
+        </div>
+        <div>
+            <button>Clear</button>
+          </div>
+        </div>
+        </form>
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="1.png" alt="Smiley" width="32" height="32">
+      </div>
+    </fieldset>
+
+    <script>
+        function fnamevalidate(){
+            var regName = /^[a-zA-Z]+$/;
+            var fname = document.getElementById('fname').value;
+            if(!regName.test(fname)){
+                document.getElementById("fnme").innerHTML = "Invalid name";
+                return false;
+            }else{               
+                document.getElementById("fnme").style.display = "none"; 
+                return true;
+            }   
+        }
+
+        function lnamevalidate(){
+            var regName = /^[a-zA-Z]+$/;
+            var lname = document.getElementById('lname').value;
+            if(!regName.test(lname)){
+                document.getElementById("lnme").innerHTML = "Invalid name";
+                return false;
+            }else{              
+                document.getElementById("lnme").style.display = "none";  
+                return true;
+            }   
+        }
+
+        function agevalidate(){
+        
+            var age = document.getElementById('age').value;
+            if(!( age > 17 && age<56 )){
+                document.getElementById("ag").innerHTML = "Invalid age";
+                return false;
+            }else{              
+                document.getElementById("ag").style.display = "none";  
+                return true;
+            }   
+        }
+
+        function cntryvalidate(){
+           
+            var country = document.getElementById("country").value;
+            if(!( country == "" )){
+                document.getElementById("ag").style.display = "none";
+                return false;
+            }else{              
+                document.getElementById("cnt").innerHTML = "Invalid";
+                return true;
+            }   
+        }
+
+        function bigImg(x) {
+  x.style.height = "64px";
+  x.style.width = "64px";
+}
+
+function normalImg(x) {
+  x.style.height = "32px";
+  x.style.width = "32px";
+}
+
+function myFunction() {
+  alert("Page is loaded");
+}
+
+function txtarea() {
+  alert("You pressed a key inside the textarea");
+}
+
+        </script>
+
+</body>
+</html>
